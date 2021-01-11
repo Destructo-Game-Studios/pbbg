@@ -1,0 +1,31 @@
+{
+  "name": "destructorpg",
+  "version": "1.0.0",
+  "description": "DestructoRPG is a group of connected components that you can use to get a browser based RPG off the ground.",
+  "main": "index.js",
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Destructo-Game-Studios/DestructoRPG.git"
+  },
+  "keywords": [
+    "rpg",
+    "php",
+    "pbbg",
+    "game",
+    "browser",
+    "based",
+    "game",
+    "roleplaying",
+    "game",
+    "library"
+  ],
+  "author": "Travis Weston <travis@4throomtech.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Destructo-Game-Studios/DestructoRPG/issues"
+  },
+  "homepage": "https://github.com/Destructo-Game-Studios/DestructoRPG#readme"
+}

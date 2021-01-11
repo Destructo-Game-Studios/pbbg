@@ -1,0 +1,17 @@
+{
+    "name": "destructo/rpg",
+    "description": "DestructoRPG is a group of connected components that you can use to get a browser based RPG off the ground.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Travis Weston",
+            "email": "travis@4throomtech.com"
+        }
+    ],
+    "require": {}
+}
