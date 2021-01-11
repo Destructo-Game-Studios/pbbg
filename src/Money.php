@@ -2,20 +2,23 @@
 
 namespace Destructo;
 
-use Destructo\Exception\ImmutabilityException;
+use Destructo\Traits\IsImmutable;
 
 class Money {
-    protected $amount;
+    use IsImmutable;
 
-    public function __construct($amount) {
+    protected int $amount;
+
+    public function __construct(int $amount) {
         $this->amount = $amount;
     }
 
-    public function __get($attribute) {
-        return $this->amount;
+    public function increase(int $amount) : Money {
+        return new Money($this->amount + $amount);
     }
 
-    public function __set($attribute, $value){
-        throw new ImmutabilityException("Attempt to set protected attribute \Destructo\Money::$attribute to $value");
+    public function __get(string $attribute) : int {
+        /** @var int */
+        return $this->$attribute;
     }
 }
