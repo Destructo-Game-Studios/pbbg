@@ -24,9 +24,25 @@ class ContainerTest extends \PHPUnit\Framework\TestCase {
     public function testIncreasingMoneyReturnsNewInstanceOfMoney() {
         $money1 = new Money(100);
 
-        $money3 = $money1->increase(33);
+        $money2 = $money1->increase(33);
 
-        $this->assertEquals(133, $money3->amount);
-        $this->assertFalse($money1 === $money3);
+        $this->assertEquals(133, $money2->amount);
+        $this->assertFalse($money1 === $money2);
+    }
+
+    public function testIncreasingMoneyWithNegativeValueWorksCorrectly() {
+        $money1 = new Money(100);
+        $money2 = $money1->increase(-33);
+        
+        $this->assertEquals(67, $money2->amount);
+        $this->assertFalse($money1 === $money2);
+    }
+
+    public function testDecreaseMethodWorksCorrectly() {
+        $money1 = new Money(100);
+        $money2 = $money1->decrease(33);
+        
+        $this->assertEquals(67, $money2->amount);
+        $this->assertFalse($money1 === $money2);    
     }
 }

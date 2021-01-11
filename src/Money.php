@@ -17,6 +17,10 @@ class Money {
         return new Money($this->amount + $amount);
     }
 
+    public function decrease(int $amount) : Money {
+        return $this->increase($amount * -1);
+    }
+
     public function __get(string $attribute) : int {
         /** @var int */
         return $this->$attribute;
