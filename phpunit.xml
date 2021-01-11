@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    backupGlobals="false" 
+    backupStaticAttributes="false" 
+    bootstrap="tests/bootstrap.php" 
+    colors="true" 
+    convertErrorsToExceptions="true" 
+    convertNoticesToExceptions="true" 
+    convertWarningsToExceptions="true" 
+    processIsolation="false" 
+    stopOnFailure="false" 
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+    >
+  
+  <coverage>
+    <include>
+      <directory suffix=".php">src/</directory>
+    </include>
+    <report>
+        <clover outputFile="build-tests/phpunit/clover.xml"/>
+        <crap4j outputFile="build-tests/phpunit/crap4j.xml" threshold="50"/>
+        <html outputDirectory="build-tests/phpunit/html-coverage" lowUpperBound="50" highLowerBound="90"/>
+        <php outputFile="build-tests/phpunit/coverage.php"/>
+        <text outputFile="build-tests/phpunit/coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+        <xml outputDirectory="build-tests/phpunit/xml-coverage"/>
+    </report>
+  </coverage>
+
+  <groups>
+    <exclude>
+      <group>slow-tests</group>
+    </exclude>
+  </groups>
+
+  <testsuites>
+    <testsuite name="Application Test Suite">
+      <directory>./tests/</directory>
+    </testsuite>
+  </testsuites>
+
+</phpunit>

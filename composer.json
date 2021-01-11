@@ -13,5 +13,11 @@
             "email": "travis@4throomtech.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Destructo\\": "src/",
+            "DestructoTest\\": "tests/",
+        }
+    },
     "require": {}
 }

@@ -1,1 +1,5 @@
 /vendor/
+/build/
+/build-tests/
+.phpunit.result.cache
+.code-workspace
