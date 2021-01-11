@@ -45,4 +45,14 @@ class ContainerTest extends \PHPUnit\Framework\TestCase {
         $this->assertEquals(67, $money2->amount);
         $this->assertFalse($money1 === $money2);    
     }
+
+    public function testMoneyIsSerializable() {
+        $money = new Money(1000);
+
+        $serial = serialize($money);
+
+        $newMoney = unserialize($serial);
+
+        $this->assertEquals(1000, $newMoney->amount);
+    }
 }
