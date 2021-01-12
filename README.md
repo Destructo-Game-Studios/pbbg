@@ -7,6 +7,7 @@ DestructoRPG is a group of connected components that you can use to get a browse
 
 ## Components To Build
 
+* Character Interface
 * Abilities
 * Items
 * Activities

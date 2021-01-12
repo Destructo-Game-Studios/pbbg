@@ -14,4 +14,9 @@ trait IsImmutable {
         throw new ImmutabilityException("Attempt to set protected attribute $className::$attribute to $value");
     }
 
+    public function __get(string $attribute) : int {
+        /** @var int */
+        return $this->$attribute;
+    }
+
 }
