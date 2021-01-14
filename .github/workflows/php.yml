@@ -26,6 +26,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
+    - name: Xdebug Action
+      uses: MilesChou/docker-xdebug@master
+
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
@@ -37,4 +40,4 @@ jobs:
     
     - run: npm run test
     - run: npm run analyzer
-    - run: npm run infection
+    - run: npm run infection:ci
