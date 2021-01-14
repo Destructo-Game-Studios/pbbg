@@ -2,18 +2,16 @@
 
 namespace DestructoTest\Abilities;
 
-use Destructo\Abilities;
 use Destructo\Abilities\Ability;
-use Destructo\Character;
-use Destructo\Money;
 
-class AbilityTest extends \PHPUnit\Framework\TestCase {
+use DestructoTest\TestCase;
+class AbilityTest extends TestCase {
 
     public function testStrengthCheckSucceedsWithMaxedStats() {
 
         $ability = new Ability('strength', 20);
 
-        $this->assertTrue( $ability->abilityCheck( 0 ) );
+        $this->assertTrue( $ability->abilityCheck( 20 ) );
 
     }
 
@@ -23,6 +21,12 @@ class AbilityTest extends \PHPUnit\Framework\TestCase {
 
         $this->assertFalse( $ability->abilityCheck( 100 ) );
 
+    }
+
+    public function testAbilityCheckWithinCorrectRange() {
+        $ability = new Ability('strength', 0);
+
+        $this->assertFalse( $ability->abilityCheck(6) );
     }
 
 

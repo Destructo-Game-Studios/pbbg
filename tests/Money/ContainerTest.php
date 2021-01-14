@@ -67,4 +67,15 @@ class ContainerTest extends \PHPUnit\Framework\TestCase {
 
         $this->assertTrue($money->under(1001));    
     }
+
+    public function testMoneyUnderMethodReturnsCorrectly() {
+        $money = new Money(1000);
+
+        $this->assertFalse($money->under(1000));
+    }
+
+    public function testMoneyAtLeastMethodReturnsCorrectly() {
+        $money = new Money(1000);
+        $this->assertTrue($money->atLeast(1000));
+    }
 }
