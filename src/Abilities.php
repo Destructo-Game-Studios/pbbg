@@ -60,4 +60,8 @@ class Abilities {
 
     }
 
+    public function all() : array {
+        return $this->abilities;
+    }
+
 }

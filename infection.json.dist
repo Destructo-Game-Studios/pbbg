@@ -1,0 +1,18 @@
+{
+    "source": {
+        "directories": [
+            "."
+        ],
+        "excludes": [
+            "vendor",
+            "tests",
+            "**\/tests"
+        ]
+    },
+    "logs": {
+        "text": "build-tests\/infection.log"
+    },
+    "mutators": {
+        "@default": true
+    }
+}

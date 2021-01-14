@@ -19,5 +19,7 @@
             "DestructoTest\\": "tests/"
         }
     },
-    "require": {}
+    "require": {
+        "infection/infection": "^0.20.2"
+    }
 }

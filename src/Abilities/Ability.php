@@ -19,7 +19,6 @@ class Ability {
     }
 
     public function abilityCheck( int $target ) : bool {
-
         return ( $this->amount + mt_rand(1,20) ) > $target; 
 
     }

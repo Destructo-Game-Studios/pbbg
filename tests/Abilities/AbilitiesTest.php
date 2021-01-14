@@ -4,10 +4,28 @@ namespace DestructoTest\Abilities;
 
 use Destructo\Abilities;
 use Destructo\Abilities\Ability;
-use Destructo\Character;
-use Destructo\Money;
 
-class AbilitiesTest extends \PHPUnit\Framework\TestCase {
+use DestructoTest\TestCase;
+
+class AbilitiesTest extends TestCase {
+
+    public function testAbilitiesDefaults() {
+        $abilities = new Abilities([]);
+        $defaults = [
+            'strength' => 1,
+            'dexterity' => 1,
+            'constitution' => 1,
+            'intelligence' => 1,
+            'wisdom' => 1,
+            'charisma' => 1,
+        ];
+
+        $actual = array_map(function($ability) {
+            return $ability->amount;
+        }, $abilities->all());
+
+        $this->assertEquals($defaults, $actual);
+    }
 
     public function testAbilitiesReturnsValueOfAbility() {
         $abilities = new Abilities([
@@ -48,6 +66,24 @@ class AbilitiesTest extends \PHPUnit\Framework\TestCase {
         $strength = $abilities->strength();
 
         $this->assertInstanceOf(Ability::class, $strength);
+    }
+
+    public function testAbilitiesIsExtendableWithoutBreaking() {
+        $class = new class extends Abilities {
+            public function __construct() {
+                parent::__construct([]);
+            }
+
+            public function getTestData() {
+                $this->abilities = $this->_setAbilities(['dexterity'=>999]);
+                $this->abilities['strength'] = 'success';
+                return $this->abilities;
+            }
+        };
+
+        $this->assertEquals('success', $class->getTestData()['strength']);
+        $this->assertEquals(999, $class->dexterity);
+        $this->assertIsArray( $class->all() );
     }
 
 }
