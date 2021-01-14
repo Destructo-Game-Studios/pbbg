@@ -14,6 +14,10 @@ class Character {
     }
 
     public function __get(string $attribute) {
+        
+        if($this->abilities->has($attribute)){
+            return $this->abilities->$attribute;
+        }
         /** @var string */
         return $this->$attribute;
     }

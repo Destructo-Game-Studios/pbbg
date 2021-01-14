@@ -32,4 +32,13 @@ class CharacterTest extends \PHPUnit\Framework\TestCase {
         $this->assertInstanceOf(Character::class, $character);
     }
 
+    public function testAbleToAccessCharacterAbilitiesWithoutAccessingAbilitiesClassDirectly() {
+
+        $money = new Money(100);
+        $abilities = new Abilities(['strength' => 100]);
+        $character = new Character('test', $money, $abilities);
+        
+        $this->assertEquals(100, $character->strength);
+    }
+
 }

@@ -14,6 +14,10 @@ class Abilities {
 
     }
 
+    public function has(string $argument) : bool {
+        return isset($this->abilities[$argument]);
+    }
+
     /** @param string $argument */
     public function __get($argument) : int{
 
