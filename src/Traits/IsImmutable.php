@@ -6,8 +6,8 @@ use Destructo\Exception\ImmutabilityException;
 
 trait IsImmutable {
 
-    /** 
-     * @param mixed $value 
+    /**
+     * @param mixed $value
      */
     public function __set(string $attribute, $value) : void {
         $className = self::class;
@@ -18,5 +18,4 @@ trait IsImmutable {
         /** @var int */
         return $this->$attribute;
     }
-
 }

@@ -28,5 +28,4 @@ class Money {
     public function under(int $amount) : bool {
         return $this->amount < $amount;
     }
-
 }

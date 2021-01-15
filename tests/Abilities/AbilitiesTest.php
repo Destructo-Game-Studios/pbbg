@@ -8,7 +8,6 @@ use Destructo\Abilities\Ability;
 use DestructoTest\TestCase;
 
 class AbilitiesTest extends TestCase {
-
     public function testAbilitiesDefaults() {
         $abilities = new Abilities([]);
         $defaults = [
@@ -20,7 +19,7 @@ class AbilitiesTest extends TestCase {
             'charisma' => 1,
         ];
 
-        $actual = array_map(function($ability) {
+        $actual = array_map(function ($ability) {
             return $ability->amount;
         }, $abilities->all());
 
@@ -85,5 +84,4 @@ class AbilitiesTest extends TestCase {
         $this->assertEquals(999, $class->dexterity);
         $this->assertIsArray( $class->all() );
     }
-
 }

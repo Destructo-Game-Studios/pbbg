@@ -2,4 +2,5 @@
 
 namespace Destructo\Exception;
 
-class ImmutabilityException extends \Exception {}
+class ImmutabilityException extends \Exception {
+}

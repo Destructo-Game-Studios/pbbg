@@ -7,7 +7,6 @@ use Destructo\Character;
 use Destructo\Money;
 
 class CharacterTest extends \PHPUnit\Framework\TestCase {
-
     public function testCharacterNameSetsCorrectly() {
         $money = new Money(0);
         $abilities = new Abilities([]);
@@ -33,12 +32,10 @@ class CharacterTest extends \PHPUnit\Framework\TestCase {
     }
 
     public function testAbleToAccessCharacterAbilitiesWithoutAccessingAbilitiesClassDirectly() {
-
         $money = new Money(100);
         $abilities = new Abilities(['strength' => 100]);
         $character = new Character('test', $money, $abilities);
         
         $this->assertEquals(100, $character->strength);
     }
-
 }
