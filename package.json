@@ -1,6 +1,6 @@
 {
   "name": "pbbg",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "DestructoRPG is a group of connected components that you can use to get a persistent browser based game off the ground.",
   "main": "index.js",
   "scripts": {
