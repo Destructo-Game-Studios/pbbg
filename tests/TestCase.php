@@ -9,14 +9,14 @@ class TestCase extends \PHPUnit\Framework\TestCase {
 
     protected function assertUsesTrait(string $traitName, $class) {
         $traits = \class_uses($class);
-        \array_filter($traits, function($actualTraitName) use ($traitName){
+        \array_filter($traits, function ($actualTraitName) use ($traitName) {
             return strpos($actualTraitName, $traitName) !== false;
         });
         $this->assertTrue(count($traits) > 0);
     }
 
     protected function assertUsesTraits(array $traits, $class) {
-        foreach($traits as $traitName){
+        foreach ($traits as $traitName) {
             $this->assertUsesTrait($traitName, $class);
         }
     }
