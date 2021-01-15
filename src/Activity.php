@@ -10,14 +10,14 @@ class Activity {
     protected int $difficulty;
     protected int $reward;
 
-    public function __construct(Ability $ability, int $difficulty, int $reward) {
+    public function __construct( Ability $ability, int $difficulty, int $reward ) {
         $this->ability = $ability;
         $this->difficulty = $difficulty;
         $this->reward = $reward;
     }
 
     public function do() : Money {
-        if (!$this->ability->abilityCheck( $this->difficulty )) {
+        if (!$this->ability->abilityCheck($this->difficulty)) {
             return new Money(0);
         }
 

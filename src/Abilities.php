@@ -7,16 +7,16 @@ use Destructo\Abilities\Ability;
 class Abilities {
     protected array $abilities;
 
-    public function __construct(array $abilities) {
-        $this->abilities = $this->_setAbilities( $abilities );
+    public function __construct( array $abilities ) {
+        $this->abilities = $this->_setAbilities($abilities);
     }
 
-    public function has(string $argument) : bool {
+    public function has( string $argument ) : bool {
         return isset($this->abilities[$argument]);
     }
 
     /** @param string $argument */
-    public function __get($argument) : int {
+    public function __get( $argument ) : int {
 
         /**
          * @var int $this->abilities[$argument]->amount
@@ -28,11 +28,11 @@ class Abilities {
      * @param string $method
      * @param mixed $arguments
      */
-    public function __call($method, $arguments) {
+    public function __call( $method, $arguments ) {
         return $this->abilities[$method];
     }
 
-    protected function _setAbilities(array $abilities) : array {
+    protected function _setAbilities( array $abilities ) : array {
         $defaults = [
             'strength' => 1,
             'dexterity' => 1,
@@ -42,7 +42,7 @@ class Abilities {
             'charisma' => 1,
         ];
 
-        $values = array_merge( $defaults, $abilities );
+        $values = array_merge($defaults, $abilities);
 
         $compiledAbilities = [];
 
