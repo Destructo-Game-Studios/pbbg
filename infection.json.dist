@@ -14,5 +14,10 @@
     },
     "mutators": {
         "@default": true
-    }
+    },
+    "phpUnit": {
+        "configDir": ".",
+        "customPath": "vendor\/bin\/phpunit"
+    },
+    "tmpDir": "build-tests\/infection-tmp"
 }
