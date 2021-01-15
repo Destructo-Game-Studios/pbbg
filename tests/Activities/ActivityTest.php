@@ -35,5 +35,15 @@ class ActivityTest extends \PHPUnit\Framework\TestCase {
 
         $this->assertEquals(100, $money->amount);
     }
+
+    public function testActivityIsCallable() {
+        $ability = new Ability('strength', 0);
+        $activity = new Activity($ability, 0, 100);
+
+        $result = $activity();
+
+        $this->assertInstanceOf(Money::class, $result);
+    }
+    
     
 }

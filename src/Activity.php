@@ -26,4 +26,8 @@ class Activity {
         return new Money($this->reward);
 
     }
+
+    public function __invoke() {
+        return $this->do();
+    }
 }
