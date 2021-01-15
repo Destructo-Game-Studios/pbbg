@@ -19,7 +19,7 @@ class AbilitiesTest extends TestCase {
             'charisma' => 1,
         ];
 
-        $actual = array_map(function ( $ability ) {
+        $actual = array_map(function ($ability) {
             return $ability->amount;
         }, $abilities->all());
 
