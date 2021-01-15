@@ -20,4 +20,5 @@ class TestCase extends \PHPUnit\Framework\TestCase {
             $this->assertUsesTrait($traitName, $class);
         }
     }
+
 }

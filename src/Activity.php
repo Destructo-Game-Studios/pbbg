@@ -5,7 +5,7 @@ namespace Destructo;
 use Destructo\Abilities\Ability;
 use Destructo\Money;
 
-class Activity {
+abstract class Activity {
     protected Ability $ability;
     protected int $difficulty;
     protected int $reward;
@@ -18,13 +18,19 @@ class Activity {
 
     public function do() : Money {
         if (!$this->ability->abilityCheck($this->difficulty)) {
+            $this->onFailure();
             return new Money(0);
         }
 
+        $this->onSuccess();
         return new Money($this->reward);
     }
 
     public function __invoke() {
         return $this->do();
     }
+
+    abstract protected function onSuccess();
+    abstract protected function onFailure();
+
 }
