@@ -30,7 +30,8 @@ abstract class Activity {
         return $this->do();
     }
 
-    abstract protected function onSuccess();
-    abstract protected function onFailure();
-
+    /** @return void */
+    abstract protected function onSuccess() : void;
+    /** @return void */
+    abstract protected function onFailure() : void;
 }

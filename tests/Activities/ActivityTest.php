@@ -8,16 +8,15 @@ use Destructo\Money;
 use DestructoTest\TestCase;
 
 class ActivityTest extends TestCase {
-
     protected function getClass($ability, $difficulty, $reward) {
-        return new class($ability, $difficulty, $reward) extends Activity{
+        return new class($ability, $difficulty, $reward) extends Activity {
             public bool $ranSuccess = false;
             public bool $ranFailure = false;
             
-            protected function onSuccess() {
+            protected function onSuccess() : void {
                 $this->ranSuccess = true;
             }
-            protected function onFailure() {
+            protected function onFailure() : void {
                 $this->ranFailure = true;
             }
         };
@@ -77,5 +76,4 @@ class ActivityTest extends TestCase {
         $activity->do();
         $this->assertTrue($activity->ranFailure);
     }
-
 }
