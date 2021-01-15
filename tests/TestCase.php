@@ -14,4 +14,10 @@ class TestCase extends \PHPUnit\Framework\TestCase {
         });
         $this->assertTrue(count($traits) > 0);
     }
+
+    protected function assertUsesTraits(array $traits, $class) {
+        foreach($traits as $traitName){
+            $this->assertUsesTrait($traitName, $class);
+        }
+    }
 }
