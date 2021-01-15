@@ -30,6 +30,14 @@ All scripts can be run with NPM or Composer. Script names are the same for both.
 
 For CI purposes, Infection tests must be a minimum MSI of 90, and a minimum covered MSI of 90.
 
+#### style
+
+`style` will execute PHP CodeSniffer. You can run this manually with `./vendor/bin/phpcs`
+
+#### style:fix
+
+`style:fix` will execute PHP-CS-Fixer. You can run this manually with `./vendor/bin/php-cs-fixer fix`
+
 ---
 
 Once your code is merged, it is available to everybody, for free, under the [MIT License](/LICENSE).
