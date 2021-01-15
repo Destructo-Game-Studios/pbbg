@@ -38,4 +38,4 @@ jobs:
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
     
-    - run: npm run tests
+    - run: npm run all-tests

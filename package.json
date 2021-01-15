@@ -4,7 +4,10 @@
   "description": "DestructoRPG is a group of connected components that you can use to get a persistent browser based game off the ground.",
   "main": "index.js",
   "scripts": {
-    "tests": "composer run-script tests"
+    "all-tests": "composer run-script all-tests",
+    "unit": "composer run-script unit",
+    "analyzer": "composer run-script analyzer",
+    "mutation": "composer run-script mutation"
   },
   "repository": {
     "type": "git",

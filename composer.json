@@ -23,10 +23,13 @@
         "infection/infection": "^0.20.2"
     },
     "scripts": {
-        "tests": [
-            "vendor/bin/phpunit",
-            "vendor/bin/psalm",
-            "vendor/bin/infection --min-msi=90 --min-covered-msi=90 --threads=4"
-        ]
+        "all-tests": [
+            "@unit",
+            "@analyzer",
+            "@mutation"
+        ],
+        "unit": "vendor/bin/phpunit",
+        "analyzer": "vendor/bin/psalm",
+        "mutation": "vendor/bin/infection --min-msi=90 --min-covered-msi=90 --threads=4"
     }
 }
