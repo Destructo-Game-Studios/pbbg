@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  check-php81:
 
     runs-on: ubuntu-latest
 
