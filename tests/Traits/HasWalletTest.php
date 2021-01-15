@@ -11,9 +11,21 @@ class HasWalletTest extends TestCase {
 
         $this->character = new class {
             use HasWallet;
+
+            public function __construct() {
+                $this->initWallet(100);
+            }
+
+            public function getWallet() {
+                return $this->wallet;
+            }
         };
     }
     public function testCharacterHasWallet() {
         $this->assertUsesTrait('Destructo\Traits\HasWallet', $this->character);
+    }
+
+    public function testCharacterWalletCanBeInitialized() {
+        $this->assertEquals(100, $this->character->getWallet()->amount);
     }
 }
