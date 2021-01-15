@@ -27,8 +27,8 @@
             "@unit",
             "@analyzer",
             "@mutation",
-            "@style",
-            "@style:fixer"
+            "@style:fixer",
+            "@style"
         ],
         "unit": "vendor/bin/phpunit",
         "analyzer": "vendor/bin/psalm",
