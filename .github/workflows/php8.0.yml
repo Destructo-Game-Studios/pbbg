@@ -1,4 +1,4 @@
-name: PHP Unit Tests
+name: PHP 8.0 Compatibility Checks
 
 on:
   push:
