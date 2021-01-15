@@ -1,0 +1,31 @@
+name: PHP Unit Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: "Install PHP"
+      uses: "shivammathur/setup-php@v2"
+      with:
+        coverage: "pcov"
+        php-version: "8.0"
+        ini-values: memory_limit=-1
+        tools: composer:v2, cs2pr
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+    
+    - run: npm run unit
