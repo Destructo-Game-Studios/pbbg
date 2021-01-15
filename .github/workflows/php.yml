@@ -14,6 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: "Install PHP"
+      uses: "shivammathur/setup-php@v2"
+      with:
+        coverage: "pcov"
+        php-version: "${{ matrix.php-version }}"
+        ini-values: memory_limit=-1
+        tools: composer:v2, cs2pr
+
     - name: Validate composer.json and composer.lock
       run: composer validate
 
@@ -25,9 +33,6 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-php-
-
-    - name: Xdebug Action
-      uses: MilesChou/docker-xdebug@master
 
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
