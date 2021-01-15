@@ -8,10 +8,10 @@ use Destructo\Money;
 
 class ActivityTest extends \PHPUnit\Framework\TestCase {
     public function testActivityReturnsMoneyObject() {
-        $activity = new Activity();
         $ability = new Ability('strength', 0);
+        $activity = new Activity($ability, 0, 100);
 
-        $result = $activity->do($ability, 0, 100);
+        $result = $activity->do();
 
         $this->assertInstanceOf(Money::class, $result);
     }
@@ -19,9 +19,9 @@ class ActivityTest extends \PHPUnit\Framework\TestCase {
     public function testActivityReturnsZeroMoneyIfAbilityCheckFails() {
         $ability = new Ability('strength', 0);
 
-        $activity = new Activity();
+        $activity = new Activity($ability, 1000, 100);
         
-        $money = $activity->do($ability, 1000, 100);
+        $money = $activity->do();
 
         $this->assertEquals(0, $money->amount);
     }
@@ -29,9 +29,9 @@ class ActivityTest extends \PHPUnit\Framework\TestCase {
     public function testActivityReturnsCorrectMoneyIfAbilityCheckSucceeds() {
         $ability = new Ability('strength', 100);
 
-        $activity = new Activity();
+        $activity = new Activity($ability, 0, 100);
         
-        $money = $activity->do($ability, 0, 100);
+        $money = $activity->do();
 
         $this->assertEquals(100, $money->amount);
     }
