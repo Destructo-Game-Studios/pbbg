@@ -68,6 +68,6 @@ class HasHealthTest extends TestCase {
     }
 
     public function testHealReturnsSelf() {
-        $this->assertUsesTrait('Destructo\Traits\HasHealth', $this->character->heal(10));        
+        $this->assertUsesTrait('Destructo\Traits\HasHealth', $this->character->heal(10));
     }
 }

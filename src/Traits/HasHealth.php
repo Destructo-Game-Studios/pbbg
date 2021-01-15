@@ -23,7 +23,7 @@ trait HasHealth {
         return ($this->health / $this->maxHealth) * 100;
     }
 
-    public function increaseMaxHealth( int $amount ) : self {
+    public function increaseMaxHealth(int $amount) : self {
         $this->maxHealth += $amount;
         return $this;
     }
