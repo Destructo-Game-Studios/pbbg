@@ -44,6 +44,4 @@ class ActivityTest extends \PHPUnit\Framework\TestCase {
 
         $this->assertInstanceOf(Money::class, $result);
     }
-    
-    
 }

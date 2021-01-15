@@ -6,7 +6,6 @@ use Destructo\Exception\ImmutabilityException;
 use Destructo\Money;
 
 class ContainerTest extends \PHPUnit\Framework\TestCase {
-
     public function testAmountIsAccessibleOnceSet() {
         $money = new Money(1000);
 
@@ -17,7 +16,7 @@ class ContainerTest extends \PHPUnit\Framework\TestCase {
         $this->expectException(ImmutabilityException::class);
         $this->expectExceptionMessage('Destructo\Money');
 
-        $money = new Money(1000);        
+        $money = new Money(1000);
         $money->amount = 10000;
     }
 
@@ -43,7 +42,7 @@ class ContainerTest extends \PHPUnit\Framework\TestCase {
         $money2 = $money1->decrease(33);
         
         $this->assertEquals(67, $money2->amount);
-        $this->assertFalse($money1 === $money2);    
+        $this->assertFalse($money1 === $money2);
     }
 
     public function testMoneyIsSerializable() {
@@ -65,7 +64,7 @@ class ContainerTest extends \PHPUnit\Framework\TestCase {
     public function testMoneyExposesUnderMethod() {
         $money = new Money(1000);
 
-        $this->assertTrue($money->under(1001));    
+        $this->assertTrue($money->under(1001));
     }
 
     public function testMoneyUnderMethodReturnsCorrectly() {

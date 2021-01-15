@@ -3,3 +3,4 @@
 /build-tests/
 .phpunit.result.cache
 .code-workspace
+.php_cs.cache

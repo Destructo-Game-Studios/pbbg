@@ -7,7 +7,9 @@
     "all-tests": "composer run-script all-tests",
     "unit": "composer run-script unit",
     "analyzer": "composer run-script analyzer",
-    "mutation": "composer run-script mutation"
+    "mutation": "composer run-script mutation",
+    "style": "composer run-script style",
+    "style:fixer": "composer run-script style:fixer"
   },
   "repository": {
     "type": "git",
