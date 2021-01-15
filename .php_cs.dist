@@ -10,6 +10,7 @@ return $config->setRules([
         'braces' => [
             'position_after_functions_and_oop_constructs' => 'same',
         ],
+        'no_spaces_inside_parenthesis' => false,
     ])
     ->setFinder($finder)
     ->setLineEnding("\n")
