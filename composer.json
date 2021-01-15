@@ -19,7 +19,8 @@
     "autoload": {
         "psr-4": {
             "Destructo\\": "src/",
-            "DestructoTest\\": "tests/"
+            "DestructoTest\\": "tests/",
+            "DestructoExamples\\": "examples/"
         }
     },
     "scripts": {
