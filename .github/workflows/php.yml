@@ -38,6 +38,4 @@ jobs:
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
     
-    - run: npm run test
-    - run: npm run analyzer
-    - run: npm run infection:ci
+    - run: npm run tests
