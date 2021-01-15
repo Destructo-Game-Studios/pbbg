@@ -6,7 +6,8 @@
   "scripts": {
     "test": "vendor/bin/phpunit",
     "analyzer": "vendor/bin/psalm",
-    "infection": "vendor/bin/infection"
+    "infection": "vendor/bin/infection",
+    "infection:ci": "vendor/bin/infection --min-msi=90 --min-covered-msi=90 --threads=4"
   },
   "repository": {
     "type": "git",
