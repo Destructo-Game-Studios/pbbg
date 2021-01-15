@@ -20,7 +20,7 @@ class HasHealthTest extends TestCase {
     }
 
     public function testIsRecognizableAsATrait() {
-        $this->assertUsesTrait('Destructo\Traits\HasHealth', $this->character);
+        $this->assertUsesTrait('HasHealth', $this->character);
     }
 
     public function testIsImplementedOnConstruction() {

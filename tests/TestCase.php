@@ -8,7 +8,10 @@ class TestCase extends \PHPUnit\Framework\TestCase {
     }
 
     protected function assertUsesTrait(string $traitName, $class) {
-        $traits = \class_uses($this->character);
-        $this->assertContains($traitName, $traits);
+        $traits = \class_uses($class);
+        \array_filter($traits, function($actualTraitName) use ($traitName){
+            return strpos($actualTraitName, $traitName) !== false;
+        });
+        $this->assertTrue(count($traits) > 0);
     }
 }
