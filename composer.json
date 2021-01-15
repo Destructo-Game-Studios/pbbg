@@ -26,10 +26,14 @@
         "all-tests": [
             "@unit",
             "@analyzer",
-            "@mutation"
+            "@mutation",
+            "@style",
+            "@style:fixer"
         ],
         "unit": "vendor/bin/phpunit",
         "analyzer": "vendor/bin/psalm",
-        "mutation": "vendor/bin/infection --min-msi=90 --min-covered-msi=90 --threads=4"
+        "mutation": "vendor/bin/infection --min-msi=90 --min-covered-msi=90 --threads=4",
+        "style": "vendor/bin/phpcs",
+        "style:fixer": "vendor/bin/php-cs-fixer fix"
     }
 }
