@@ -3,7 +3,6 @@
 namespace DestructoTest\Traits;
 
 use Destructo\Traits\HasHealth;
-use Destructo\Traits\HasWallet;
 
 use DestructoTest\TestCase;
 
@@ -13,7 +12,6 @@ class HasHealthTest extends TestCase {
 
         $this->character = new class {
             use HasHealth;
-            use HasWallet;
 
             public function __construct() {
                 $this->initializeHealth(100, 100);
