@@ -84,4 +84,16 @@ class AbilitiesTest extends TestCase {
         $this->assertEquals(999, $class->dexterity);
         $this->assertIsArray($class->all());
     }
+
+    public function testHasReturnsCorrectly() {
+        $abilities = new Abilities([
+            'dexterity' => 10,
+            'constitution' => 10,
+            'intelligence' => 10,
+            'wisdom' => 10,
+            'charisma' => 10,
+        ]);
+
+        $this->assertTrue($abilities->has('dexterity'));
+    }
 }

@@ -28,4 +28,19 @@ class HasWalletTest extends TestCase {
     public function testCharacterWalletCanBeInitialized() {
         $this->assertEquals(100, $this->character->getWallet()->amount);
     }
+
+    public function testCharacterWalletDefaults() {
+        $char = new class {
+            use HasWallet;
+
+            public function __construct() {
+                $this->initWallet();
+            }
+
+            public function getWallet() {
+                return $this->wallet;
+            }
+        };
+        $this->assertEquals(0, $char->getWallet()->amount);
+    }
 }
